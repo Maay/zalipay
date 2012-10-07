@@ -1,4 +1,4 @@
-== Zalipay
+==Zalipay
 
 This is my first rails app. It uses [YouTube Chromeless Player](https://developers.google.com/youtube/chromeless_player_reference) to show random fullscreen youtube videos from your collection. You can switch to the next random video by pressing "space" button on keyboard. 
 
