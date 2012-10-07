@@ -1,0 +1,30 @@
+doctype
+html lang="en" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#"
+  head
+    meta content="text/html;charset=UTF-8" http-equiv="content-type"
+    title 
+      ' Zalipay
+      = @typpe.name
+    = csrf_meta_tag
+    = javascript_include_tag 'jquery-1.4.2.js', 'jquery-ui', 'jquery.hotkeys', 'jquery.swfobject.1-1-1.min', 'jquery.tipsy', 'allyouTubeEmbed-jquery-1.0.js', 'types'
+    = stylesheet_link_tag 'video', 'tipsy'
+    meta content="Смотри@Залипай! | Подборка видео с ютуба для тех, кто хочет позалипать, но искать что-то самому дико лень" name="description"
+    meta content="article" property="og:type"
+    meta content="Zalipay" property="og:site_name"
+    meta content="videoroulette" property="og:description"
+    meta content="Video timekiller" property="og:title"
+    meta content="" property="fb:app_id"
+    script charset="windows-1251" src="http://vkontakte.ru/js/api/share.js?10" type="text/javascript"
+    javascript:
+      | var _gaq = _gaq || [];
+      | _gaq.push(['_setAccount', '']);
+      | _gaq.push(['_trackPageview']);
+
+      | (function() {
+        | var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        | ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        | var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      | })();
+
+	  body
+    = yield

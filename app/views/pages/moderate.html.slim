@@ -1,0 +1,25 @@
+h1 Filter the idiots
+| To delete link, just kill it in fire and next time you won't see them.
+#moderate
+  = link_to 'Some kind of admin dashboard', :admin
+  '   
+  = link_to 'All approved', :all
+  '   
+  = link_to 'Continue the funfunfun', :root
+  = form_tag complete_pages_path do
+    - @video.each do |video|
+      fieldset
+        = fields_for "video_ids[#{video.id}]", video do |video_fields|
+          = video_fields.text_field :link, :size => '60'
+          = collection_select(:type, :type_id, Type.all, :id, :name, :prompt => false)
+          | Хорошее 
+          = video_fields.check_box :published 
+          |  \ 
+          | Плохое
+          = video_fields.check_box :trash
+    = submit_tag "Okay"
+  = link_to 'Some kind of admin dashboard', :admin
+  '   
+  = link_to 'All approved', :all
+  '   
+  = link_to 'Continue the funfunfun', :root

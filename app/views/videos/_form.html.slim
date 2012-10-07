@@ -1,0 +1,15 @@
+#nextb NEXT
+#space push 'SPACE'
+a#toadd href="#"
+#add
+  = form_for Video.new do |f|
+    = f.text_field :link, :id => "linkss", :title => "Пожалуйста, добавляйте только прямые ссылки на видео. Ebded(разрешение на вставку) должно быть включено."
+    = f.submit "Ok"
+#share
+  a#shareb href="#"
+  #shareopt
+    #shareopt1
+      a#tweet href="http://twitter.com/share" target="_blank"
+    #shareopt2
+    #shareopt3
+#logo title="Все находится в стадии разработки, иногда бывают глюки. Если видео не отображается, нажмите пробел. Что делать с фаерфоксом, я пока не придумал, простите :)"

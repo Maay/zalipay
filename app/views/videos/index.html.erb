@@ -1,0 +1,48 @@
+<div id="all">
+  <div id="menu">
+    <div id="nextb" >NEXT</div><div id="space" >press 'SPACE'</div>
+    <div id="share"><a href='#' id='shareb' title="Current video">SHARE</a>
+      <div id='shareopt'>
+        <div id ='shareopt1'>
+          <a href="http://twitter.com/share" id="tweet" target="_blank">Tweet</a>
+        </div>
+        <div id ='shareopt2'>
+          <iframe src="http://www.facebook.com/plugins/like.php?locale=en_US&amp;href=http://maaaay.com/zalipay/&amp;layout=button_count&amp;show_faces=false&amp;width=90&amp;action=like&amp;colorscheme=dark&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:90px; height:21px;" allowTransparency="true"></iframe>
+        </div>
+        <div id ='shareopt3'>
+          <script type="text/javascript"><!--
+          document.write(VK.Share.button({url: "http://maaaay.com/zalipay/"},{type: "link", text: ".:."}));
+          --></script>
+        </div>
+      </div>
+    </div>
+
+    <div id= "adding">
+      <a id="toadd" href="#">ADD</a>
+      <div id="add"><%= form_for Video.new, :url => {:action=>"create", :controller=>"videos"} do |f| %><%= f.text_field :link, :id => "linkss", :title => "Plz, only direct links. Embed option should be turn on."%><%= collection_select(:type, :type, @types, :id, :name, :prompt => false)%><%= f.submit "Ok" %><% end %>
+      </div>
+    </div>
+
+    <div id="logo" >Zalipay TV</div>
+  </div>
+
+  <div id="player"> 	
+
+    <div id="message">press 'space' for videos. supa-dupa beta.</div>
+
+  </div>
+
+  <div id="contr">	
+    <div id="pause"></div>
+    <div id="play"></div>
+  </div>
+
+  <div id="types_menu">
+    Category:
+    <%= link_to "All", :root, :class => "active menu_item" %>
+    <% @types.each do |t|%>
+    <%= link_to t.name, category_path(t.macros), :class => "menu_item" %>
+    <%end%>
+  </div>
+
+</div>

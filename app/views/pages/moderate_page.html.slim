@@ -1,0 +1,62 @@
+= javascript_include_tag 'jquery-1.4.2.js', 'best_in_place', 'pages'
+= stylesheet_link_tag 'pages'
+title Admin panel
+h2 Oooook
+= link_to 'Waiting for approval', :moderate
+br
+= link_to 'All approved', :all
+br
+= link_to 'Fun!', :root
+br
+
+h3 New type
+= form_for Type.new, :url => {:action=>"create", :controller=>"types"} do |f| 
+  = f.text_field :name, :placeholder => "Name"
+  = f.text_field :macros, :placeholder => "Macros"
+  = f.submit "Ok" 
+  
+- if @types != :nil
+  h3 All types
+  i 
+    ' click on word to edit
+    br
+  - @types.each do |t|
+    b
+      = best_in_place t, :name
+    ' 
+    b  
+      = best_in_place t, :macros
+    ' 
+    = link_to 'X', destroy_type_path(t), method: :delete, :confirm => "are you shoure?"
+    '   videos -
+    = t.videos.count
+    br
+
+h3 
+  ' All videos - 
+  = Video.all.count    
+h3 New video
+h4 One video
+= form_for Video.new, :html => { :id => "admin_new_v"}, :url => {:action=>"admin_create", :controller=>"pages"} do |f| 
+  = f.text_field :link, :id => "linkss", :title => "Plz, only direct links. Embed option should be turn on."
+  = f.hidden_field :published, :value => :true
+  = f.hidden_field :random, :value => SecureRandom.random_number
+  = collection_select(:type, :type, Type.all, :id, :name, :prompt => false)
+  = f.submit "Ok"
+
+h4 Many videos from file
+= form_for :videos, :html => { :id => "admin_new_videos"}, :url => {:action=>"admin_create_many", :controller=>"pages"} do |f|
+  = f.file_field :file
+  = f.submit "Ok"
+br
+' Every link should be from the new line and should match the format: 
+br
+i [http://www.youtube.com/watch?v=9hBpF_Zj4OA] (Category)
+br
+'  Please, keep your file less then 15kb.
+= link_to "Download pattern file", "/upload_videos.txt"
+
+    
+
+
+    

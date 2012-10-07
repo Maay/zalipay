@@ -1,0 +1,82 @@
+<script type="text/javascript"><!--
+      $.getJSON('/types/show.json', function(data) {
+          $('#pause').show();
+          $('#player').empty().youTubeEmbed(data.video_link);
+	$('#lol').css('display', 'block');
+	$('#shareopt1 a').attr('href', 'http://twitter.com/share?' + $.param({
+              text: data.twitter_link,
+		related: 'ZloeSabo:aximas'
+          }));
+
+	$('#shareopt2 :first-child').attr('src', 'http://www.facebook.com/plugins/like.php?' + $.param({
+		href: data.video_id,
+		layout: 'button_count',
+		width: '90',
+		colorscheme: 'dark',
+		locale: 'en_US'
+			}));
+		
+	$('#shareopt3').html(VK.Share.button({
+		  url: data.video_id,
+		  title: 'Видео ок!',
+		  description: 'videoroulette',
+		  noparse: true
+		},
+		{
+			type: "link", 
+			text: ".:."
+		}));	
+});
+--></script>
+<div id="all">
+  <div id="menu">
+    <div id="nextb" >NEXT</div><div id="space" >press 'SPACE'</div>
+    <div id="share"><a href='#' id='shareb' title="Current video">SHARE</a>
+      <div id='shareopt'>
+        <div id ='shareopt1'>
+          <a href="http://twitter.com/share" id="tweet" target="_blank">Tweet</a>
+        </div>
+        <div id ='shareopt2'>
+          <iframe src="http://www.facebook.com/plugins/like.php?locale=en_US&amp;href=http://maaaay.com/zalipay/&amp;layout=button_count&amp;show_faces=false&amp;width=90&amp;action=like&amp;colorscheme=dark&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:90px; height:21px;" allowTransparency="true"></iframe>
+        </div>
+        <div id ='shareopt3'>
+          <script type="text/javascript"><!--
+          document.write(VK.Share.button({url: "http://maaaay.com/zalipay/"},{type: "link", text: ".:."}));
+          --></script>
+        </div>
+      </div>
+    </div>
+
+    <div id= "adding">
+      <a id="toadd" href="#">ADD</a>
+      <div id="add"><%= form_for Video.new do |f| %><%= f.text_field :link, :id => "linkss", :title => "Plz, only direct links. Embed option should be turn on."%><%= collection_select(:type, :type, @types, :id, :name, :prompt => false)%><%= f.submit "Ok" %><% end %>
+      </div>
+    </div>
+
+    <div id="logo" >Zalipay</div>
+  </div>
+
+  <div id="player"> 	
+
+    <div id="message">press 'space' for videos. supa-dupa beta.</div>
+
+  </div>
+
+  <div id="contr">	
+    <div id="pause"></div>
+    <div id="play"></div>
+  </div>
+
+  <div id="types_menu">
+    Category:
+    <%= link_to "All", :root, :class => "menu_item"%>
+    <% @types.each do |t|%>
+    <%if t == @typpe%>
+    <%= link_to t.name, category_path(t.macros), :class => "active menu_item" %>
+    <%else%>
+    <%= link_to t.name, category_path(t.macros), :class => "menu_item" %>
+    <%end%>
+    <%end%>
+  </div>
+
+</div>

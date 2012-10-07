@@ -1,0 +1,251 @@
+@font-face {
+	font-family: 'FileBold';
+	src: url('/font/file-webfont.eot');
+	src: url('/font/file-webfont.eot?iefix') format('eot'),
+	url('/font/file-webfont.woff') format('woff'),
+	url('/font/file-webfont.ttf') format('truetype'),
+	url('/font/file-webfont.svg#webfontEQkiva6u') format('svg'),
+	url('/font/opentype/File.otf') format('opentype');
+	font-weight: normal;
+	font-style: normal;
+}
+.FileBold { font-family:"FileBold", Impact, Charcoal, sans-serif;  
+}
+
+
+body {
+	font-family: 'FileBold', Impact, Charcoal, sans-serif;
+	background-color: black; 
+	color: white; 
+	overflow: hidden; 
+	line-height: 14px;
+}
+#menu { 
+	position:fixed;
+	color:white;
+	width: 97%;
+	height: 40px;
+	background-color: #cacaca;
+	top: -20px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 1%;
+	padding-top:20px;	
+	-moz-border-radius: 9px;
+	-webkit-border-radius: 9px;
+	-khtml-border-radius: 9px;
+	border-radius: 9px;
+	z-index: 99;
+	left:4px;
+	right:4px;	
+}
+
+#types_menu {
+	font-size: 25px;
+	position:fixed;
+	color:white;
+	width: 97%;
+	height: 40px;
+	background-color: #cacaca;
+	bottom: -3px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-left: 1%;
+	padding-top:20px;	
+	-moz-border-radius: 9px;
+	-webkit-border-radius: 9px;
+	-khtml-border-radius: 9px;
+	border-radius: 9px;
+	z-index: 99;
+	left:4px;
+	right:4px;
+}
+
+a.active.menu_item {
+	color:#9067cb;
+}
+
+.menu_item {
+	display: inline;
+	margin: 0px 5px 0 5px;
+}
+
+
+#back {
+	position:fixed;
+	color: #606060;
+	font-size:25px;
+	background-color: #cacaca;
+	height: 20px;	
+	width: 114px;
+	-moz-border-radius: 9px;
+	-webkit-border-radius: 9px;
+	-khtml-border-radius: 9px;
+	border-radius: 9px;
+	z-index: 99;
+	padding-top:10px;
+	padding-left:10px;
+	padding-right:10px;
+	top:2%;
+	left:2%;
+}
+
+
+
+#logo {
+	position:absolute;
+	top:36px;
+	right:60px;
+	font-size:32px;
+	
+}
+
+#nextb {
+	position:absolute;
+	top:1.5em;
+	left:85px;
+	font-size:22px;
+	margin:0 1.5em 0 1.5em;
+}
+
+#space {
+	position:absolute;
+	color:white;
+	top:1.5em;
+	left:1em;
+	font-size:22px;
+	margin:0 1.5em 0 1.5em;
+}
+
+#share {
+	position:absolute;
+	top:1.5em;
+	left:161px;
+	font-size:22px;
+	margin:0 1.5em 0 1.5em;
+}
+
+#shareopt {
+	position:absolute;
+	margin:2px;
+	left:-2px;
+
+}
+
+#shareopt1 {
+	position:absolute;
+	z-index:99;
+	
+}
+#shareopt2 {
+	position:absolute;
+	width:100px;
+	left:63px;
+	top:-5px;
+	z-index:0;
+	
+}
+
+#shareopt3 {
+	position:absolute;
+	left:140px;
+	top:-2px;
+	z-index:0;
+}
+
+#adding {
+	position:absolute;
+	top:2.1em;
+	left:245px;
+	margin:0 1.5em 0 2.3em;
+}
+#toadd {
+	position:absolute;
+	font-size:22px;
+}
+
+#add {
+	position:absolute;
+	width:290px;
+}
+
+#flash_notice{
+	position:absolute;
+	top:-15px;
+	left:50px;
+	font-size: 10px;
+	width:200px;
+}
+
+
+#player {  
+	margin-left: -6px;
+	margin-right: -6px;
+	z-index:-99;
+}	
+
+#moderate{
+	overflow:scroll;
+	height:600px;
+}
+
+#all{
+	position:fixed;
+	height:100%;
+	width:100%;
+}
+
+#message {
+	color:white;
+	position:absolute;
+	top:50%;
+	left:5px;
+	right:5px;
+	font-size:40px;
+}
+
+
+#contr {
+	
+	position:absolute;
+	top:85%;
+	left:4%;
+}
+
+#pause {
+	background:url('/assets/pause-button.png') no-repeat;
+	width:40px;
+	height:40px;
+	cursor:pointer;
+}
+
+#play {
+	background:url('/assets/play-button.png') no-repeat;
+	width:40px;
+	height:40px;
+	cursor:pointer;
+}
+
+
+
+pre {
+	background-color: #eee;
+	padding: 10px;
+	font-size: 11px;
+}
+
+a { color: white; text-decoration:none;}
+a:visited { color: white; text-decoration:none;}
+a:hover { color:#9067cb; }
+
+
+
+
+	.fieldWithErrors {
+		padding: 2px;
+		background-color: red;
+		display: table;
+	}
+
+
+
